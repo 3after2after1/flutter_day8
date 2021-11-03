@@ -2,6 +2,6 @@
 
 A new Flutter project.
 
-## GTask: Signing app with keystore
+## Task: Signing app with keystore
 
-Task: Signing
+
