@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kilo_loco_day2">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="kilo_loco_day2"
+        android:label="Deriv"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -13,6 +13,7 @@ class _MyAppState extends State<MyApp> {
   final controller = TextEditingController();
 
   List<bool> _selection = [true, false, false];
+  String tip = "";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,6 +22,13 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  tip,
+                  style: TextStyle(fontSize: 30),
+                ),
+              ),
               Text("Total Amount"),
               SizedBox(
                 width: 85,
@@ -70,5 +78,10 @@ class _MyAppState extends State<MyApp> {
     final totalAmount = double.parse(controller.text);
     final selectedIndex = _selection.indexWhere((element) => element);
     final tipPercentage = [0.1, 0.15, 0.2][selectedIndex];
+
+    final tipTotal = (totalAmount * tipPercentage).toStringAsFixed(2);
+    setState(() {
+      tip = '\$$tipTotal';
+    });
   }
 }
